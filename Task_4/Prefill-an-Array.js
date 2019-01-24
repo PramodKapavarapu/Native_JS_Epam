@@ -1,6 +1,9 @@
-function prefill(noOfElements, value) {
-  if(!Number.isInteger(Number(noOfElements)) || typeof noOfElements === "boolean" || !isFinite(noOfElements) || noOfElements < 0){
-    throw new TypeError(`${noOfElements} is invalid`);
-  }
-  return new Array(Number(noOfElements)).fill(value);
+function add(n){
+  var func = function(value){
+    return add(n + value);
+  };
+  func.valueOf=function(){
+    return n
+  };
+  return func;
 }
